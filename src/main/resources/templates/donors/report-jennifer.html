@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>INTC-3283 - Welcome</title>
+    <link type="text/css" rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h1>Weekly Trend Report</h1>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Week Donated</th>
+                    <th>Total Donated</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="donation : ${weeklyTrend}">
+                    <td th:text="${donation.donationWeek}"></td>
+                    <td th:text="${'$' + #numbers.formatDecimal(donation.totalDonated, 0, 'COMMA', 2, 'POINT')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Monthly Trend Report</h1>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Month Donated</th>
+                    <th>Total Donated</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="donation : ${monthlyTrend}">
+                    <td th:text="${donation.donationMonth}"></td>
+                    <td th:text="${'$' + #numbers.formatDecimal(donation.totalDonated, 0, 'COMMA', 2, 'POINT')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Top Event Donor Report</h1>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone Number</th>
+                    <th>Amount Given</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="donation : ${topEventDonors}">
+                    <td th:text="${donation.firstName}"></td>
+                    <td th:text="${donation.lastName}"></td>
+                    <td th:text="${donation.phone}"></td>
+                    <td th:text="${'$' + #numbers.formatDecimal(donation.amountGiven, 0, 'COMMA', 2, 'POINT')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

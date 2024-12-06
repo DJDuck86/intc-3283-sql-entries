@@ -1,7 +1,31 @@
+=== POST One Task (200 OK)
+include::{snippets}/tasks/create-200/curl-request.adoc[]
+include::{snippets}/tasks/create-200/http-request.adoc[]
+
+=== POST One Task (400 Bad Request)
+include::{snippets}/tasks/create-400/curl-request.adoc[]
+include::{snippets}/tasks/create-400/http-request.adoc[]
+
 === GET One Task (200 OK)
 include::{snippets}/tasks/get-one-200/curl-request.adoc[]
 include::{snippets}/tasks/get-one-200/http-response.adoc[]
 
-=== Get One Task (404 not found)
+=== Get One Task (404 Not Found)
 include::{snippets}/tasks/get-one-404/curl-request.adoc[]
 include::{snippets}/tasks/get-one-404/http-response.adoc[]
+
+=== GET List of Tasks (200 OK)
+include::{snippets}/tasks/get-list-200/curl-request.adoc[]
+include::{snippets}/tasks/get-list-200/http-request.adoc[]
+
+=== PUT One Task (200 OK)
+include::{snippets}/tasks/put-one-200/curl-request.adoc[]
+include::{snippets}/tasks/put-one-200/http-request.adoc[]
+
+=== PUT One Task (400 Bad Request)
+include::{snippets}/tasks/put-one-400/curl-request.adoc[]
+include::{snippets}/tasks/put-one-400/http-request.adoc[]
+
+=== DELETE One Task (204 No Content)
+include::{snippets}/tasks/delete-one-204/curl-request.adoc[]
+include::{snippets}/tasks/delete-one-204/http-response.adoc[]
